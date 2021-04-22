@@ -5,15 +5,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int num1=0, num2=0;
-        do {
-            System.out.print("Podaj liczby, ktore mam dodac: ");
-            num1 = input.nextInt();
-            num2 = input.nextInt();
-            if ((num1 == 0) && (num2 == 0)) break;
-            System.out.printf("Wynik dodawania %d + %d = %d%n", num1, num2, num1 + num2);
-        } while (true);
-
-
+        int num1;
+        System.out.print("Podaj liczbę do przekonwertowania na typ szesnastkowy ");
+        num1 = input.nextInt();
+        System.out.println("liczba " + num1 + " w:\nPostaci szesnastkowej to " + Integer.toHexString(num1) + "\nPostaci binarnej to " + Integer.toBinaryString(num1) );
     }
 }
