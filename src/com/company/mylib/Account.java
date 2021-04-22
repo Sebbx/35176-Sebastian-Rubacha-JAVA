@@ -1,7 +1,7 @@
 package com.company.mylib;
 
 public class Account {
-    private String name;
+    public String name;
 
     public void setName(String name)
     {
