@@ -7,8 +7,9 @@ public class Main {
 
         //AnarchizeTest.main();
         //CamelizeTest.main();
-
-        DecamelizeTestA.main();
+        //DecamelizeTestA.main();
+        //DecamelizeTestB.main();
+        IsPalindromeTest.main();
 
 
 

@@ -15,7 +15,8 @@ public class StringFun {
             for (int i = 1; i < dlugosc; i += 2) {
                 ch[i] = Character.toUpperCase(ch[i]);
             }
-        } else {
+        }
+        else {
             for (int i = 0; i < dlugosc; i += 2) {
                 ch[i] = Character.toUpperCase(ch[i]);
             }
@@ -93,5 +94,27 @@ public class StringFun {
         decamelizeSentence = decamelizeSentence.substring(0, 1).toUpperCase() + decamelizeSentence.substring(1);
 
         return decamelizeSentence;
+    }
+
+    public static boolean IsPalindrome(String sentence)
+    {
+        String reversedSentence = "";
+
+        sentence = sentence.replaceAll("\\s","");
+
+        sentence = sentence.toLowerCase();
+
+        int lenght = sentence.length();
+
+        for (int i = 0; i < lenght; i++)
+        {
+            reversedSentence += sentence.substring(lenght - i - 1,lenght - i);
+        }
+
+        if (sentence.equals(reversedSentence))
+        {
+            return true;
+        }
+        else return false;
     }
 }
