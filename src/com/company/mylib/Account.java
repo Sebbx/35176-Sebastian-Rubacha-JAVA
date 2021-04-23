@@ -6,12 +6,6 @@ public class Account {
 
     private String name;
 
-    private static String ukrAlphabet = "абвгдеєжзиіїйклмнопрстуфхцчшщьюя";
-    private static String translitRepl[] = {"a","b","v","g","d","e","je","zh","z","y","i","ji", "j",
-            "k","l","m","n","o","p","r","s","t","u","f","h","c",
-            "ch","sh","shh","'","ju","ja"};
-
-
     public static String capitalize(String aStr)
     {
         String[] tokens = StringUtils.split(aStr);
