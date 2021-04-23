@@ -9,7 +9,8 @@ public class Main {
         //CamelizeTest.main();
         //DecamelizeTestA.main();
         //DecamelizeTestB.main();
-        IsPalindromeTest.main();
+        //IsPalindromeTest.main();
+        ShuffleTest.main();
 
 
 

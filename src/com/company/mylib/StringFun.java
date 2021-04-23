@@ -5,6 +5,7 @@ import javax.swing.*;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Locale;
+import java.util.Random;
 
 public class StringFun {
     public static String Anarchize(String sentence) {
@@ -15,8 +16,7 @@ public class StringFun {
             for (int i = 1; i < dlugosc; i += 2) {
                 ch[i] = Character.toUpperCase(ch[i]);
             }
-        }
-        else {
+        } else {
             for (int i = 0; i < dlugosc; i += 2) {
                 ch[i] = Character.toUpperCase(ch[i]);
             }
@@ -43,7 +43,7 @@ public class StringFun {
                 s.substring(1).toLowerCase();
     }
 
-    public static String DecamelizeA(String sentence){
+    public static String DecamelizeA(String sentence) {
 
         sentence = sentence.substring(0, 1).toLowerCase() + sentence.substring(1);
 
@@ -52,10 +52,8 @@ public class StringFun {
 
         String decamelizeSentence = "";
 
-        for(int i = 0; i < dlugosc; i++ )
-        {
-            if (Character.isUpperCase(charSentence[i]))
-            {
+        for (int i = 0; i < dlugosc; i++) {
+            if (Character.isUpperCase(charSentence[i])) {
                 decamelizeSentence += " ";
             }
             decamelizeSentence += charSentence[i];
@@ -67,7 +65,7 @@ public class StringFun {
     }
 
     public static String DecamelizeB(String sentence) {
-        int a = 0,b;
+        int a = 0, b;
 
         sentence = sentence.substring(0, 1).toLowerCase() + sentence.substring(1);
 
@@ -77,17 +75,14 @@ public class StringFun {
         char charSentence[] = sentence.toCharArray();
 
 
-        for (int i = 0; i<length; i++)
-        {
-            if (Character.isUpperCase(charSentence[i]))
-            {
+        for (int i = 0; i < length; i++) {
+            if (Character.isUpperCase(charSentence[i])) {
                 b = i;
                 decamelizeSentence += sentence.substring(a, b).toLowerCase() + " ";
                 a = b;
 
             }
-            if(i == length - 1)
-            {
+            if (i == length - 1) {
                 decamelizeSentence += sentence.substring(a, length).toLowerCase();
             }
         }
@@ -96,25 +91,44 @@ public class StringFun {
         return decamelizeSentence;
     }
 
-    public static boolean IsPalindrome(String sentence)
-    {
+    public static boolean IsPalindrome(String sentence) {
         String reversedSentence = "";
 
-        sentence = sentence.replaceAll("\\s","");
+        sentence = sentence.replaceAll("\\s", "");
 
         sentence = sentence.toLowerCase();
 
         int lenght = sentence.length();
 
-        for (int i = 0; i < lenght; i++)
-        {
-            reversedSentence += sentence.substring(lenght - i - 1,lenght - i);
+        for (int i = 0; i < lenght; i++) {
+            reversedSentence += sentence.substring(lenght - i - 1, lenght - i);
         }
 
-        if (sentence.equals(reversedSentence))
-        {
+        if (sentence.equals(reversedSentence)) {
             return true;
+        } else return false;
+    }
+
+    public static String Shuffle(String sentence) {
+        Random random = new Random();
+
+        int lenght;
+        int lenght2 = sentence.length();
+        char charSentence[];
+        String shuffledSentence = "";
+        int randomizedNumber;
+
+        for (int i = 0; i < lenght2; i++) {
+            lenght = sentence.length();
+            randomizedNumber = random.nextInt(lenght);
+            if (randomizedNumber == 0) randomizedNumber++;
+            charSentence = sentence.toCharArray();
+
+            shuffledSentence = shuffledSentence + charSentence[randomizedNumber - 1];
+
+            sentence = sentence.substring(0, randomizedNumber - 1) + sentence.substring(randomizedNumber, lenght);
         }
-        else return false;
+        return shuffledSentence;
+
     }
 }
